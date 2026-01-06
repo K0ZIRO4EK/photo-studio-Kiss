@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.navigation-link').forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener("click", function(e) {
             e.preventDefault();
 
             const href = this.getAttribute('href').substring(1);
-
-            const scrollTarget = document.getElementById(href);
+            const target = document.getElementById(href);
 
             const topOffset = 97;
-            const elementPosition = scrollTarget.getBoundingClientRect().top;
+            const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition - topOffset;
 
             window.scrollBy ({
