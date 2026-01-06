@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (!input.value.trim() || input.value === 'ДД.ММ.ГГГГ') {
             input.value = 'ДД.ММ.ГГГГ';
-            // Ставим курсор в начало
             setTimeout(function() {
                 input.setSelectionRange(0, 0);
             }, 0);
