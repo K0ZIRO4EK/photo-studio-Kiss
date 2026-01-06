@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const label = input.parentElement.querySelector('.input-placeholder');
         
         input.addEventListener("focus", function() {
-            label.style.visibility = 'hidden';
+            label.classList.add('hidden');
         });
     
         document.addEventListener("click", function(e) {
             if (!input.contains(e.target) && input !== e.target) {
                 if (input.value.trim() === '') {
-                    label.style.visibility = 'visible';
+                    label.classList.remove('hidden');
                 }
             }
         });
